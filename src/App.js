@@ -1,5 +1,11 @@
+import React from "react";
+import Main from "./layouts/Main";
 function App() {
-  return <h1>Hello</h1>;
+  return (
+    <>
+      <Main></Main>
+    </>
+  );
 }
 
 export default App;

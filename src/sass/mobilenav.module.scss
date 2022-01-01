@@ -1,0 +1,38 @@
+// colors======
+$black: #1a1a1d;
+$gray: #4e4e50;
+$brown: #6f2232;
+$hotpink: #950740;
+$red: #c3073f;
+.nav {
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: $black;
+  text-align: center;
+  padding-top: 4em;
+  font-family: "Trade Winds", cursive;
+  transition: all 2s;
+  transform: translateX(100%);
+  ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    li {
+      list-style: none;
+      margin: 0.5rem auto;
+      a {
+        color: $red;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+.open {
+  transform: translateX(0);
+}
+.close {
+  transform: translateX(100%);
+}

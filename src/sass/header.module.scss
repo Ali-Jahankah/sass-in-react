@@ -1,0 +1,68 @@
+// colors======
+$black: #1a1a1d;
+$gray: #4e4e50;
+$brown: #6f2232;
+$hotpink: #950740;
+$red: #c3073f;
+@mixin burger($border, $color) {
+  border-top-left-radius: $border;
+  border-top-right-radius: $border;
+  background: $color;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+.header {
+  width: 100%;
+  background: $black;
+  font-family: "Trade Winds", cursive;
+  padding: 1em 0.5em;
+  font-size: 1rem;
+}
+.header_nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header_nav ul {
+  display: none;
+}
+.header_nav ul li {
+  margin-left: 1rem;
+  cursor: pointer;
+}
+.nav_link {
+  color: $red;
+}
+.header_nav ul li:hover a {
+  color: $red;
+}
+// ================Burger btn================
+.burger_btn {
+  :nth-child(1) {
+    @include burger(4px, $red);
+  }
+  :nth-child(2) {
+    @include burger(0, $brown);
+    border-radius: 4px;
+  }
+  :nth-child(3) {
+    @include burger(0, $red);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+}
+.burger_item {
+  width: 3rem;
+  margin: 2px 0;
+  height: 8px;
+}
+// ===========================Logo==============
+.logo {
+  width: 50px;
+  max-width: 50px;
+}

@@ -1,0 +1,76 @@
+// colors==
+$black: #1a1a1d;
+$gray: #4e4e50;
+$brown: #6f2232;
+$hotpink: #950740;
+$red: #c3073f;
+$white: #c9c9ca;
+@mixin form_input() {
+  border-bottom: 2px solid $hotpink;
+  padding: 0.5em 1em;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  background: transparent;
+  &::placeholder {
+    color: $white;
+    opacity: 0.5;
+  }
+}
+
+.hero {
+  width: 100%;
+
+  background: url("../img/hero.jpg");
+  background-size: cover;
+  background-position-x: 30%;
+  padding: 4em 2em;
+  min-height: 90vh;
+  filter: brightness(0.7);
+  &:hover {
+    filter: brightness(1);
+  }
+}
+.form_section {
+  width: 90%;
+  padding: 1em 1em 3em;
+  background: linear-gradient(
+    $gray,
+    #950740,
+    $black,
+    $brown,
+    transparent,
+    $red,
+    transparent
+  );
+  position: relative;
+  border-bottom-left-radius: 26%;
+  border-top-right-radius: 10%;
+  border-bottom-right-radius: 80%;
+  border-top-left-radius: 75%;
+}
+.hero_form {
+  width: 100%;
+  text-align: center;
+  border-radius: 10%;
+  background: $black;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  padding-bottom: 8em;
+  input {
+    @include form_input();
+  }
+  button {
+    width: max-content;
+    color: $white;
+    display: inline;
+    padding: 1.5em 0.5em;
+    box-shadow: 0 3px 0px 0px $hotpink;
+    border-radius: 50%;
+    background: $black;
+    position: absolute;
+    bottom: 20px;
+    left: 30%;
+    font-size: 1.5rem;
+  }
+}
