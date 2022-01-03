@@ -21,6 +21,7 @@ li {
   font-family: "Trade Winds", cursive;
   padding: 1em 0.5em;
   font-size: 1rem;
+  overflow: hidden;
 }
 .header_nav {
   width: 100%;
@@ -37,12 +38,15 @@ li {
 }
 .nav_link {
   color: $red;
+  font-size: 1rem;
 }
 .header_nav ul li:hover a {
-  color: $red;
+  color: $gray;
 }
 // ================Burger btn================
 .burger_btn {
+  z-index: 10;
+  cursor: pointer;
   :nth-child(1) {
     @include burger(4px, $red);
   }
@@ -65,4 +69,18 @@ li {
 .logo {
   width: 50px;
   max-width: 50px;
+  z-index: 10;
+}
+@media screen and (min-width: 500px) {
+  .burger_btn {
+    display: none;
+  }
+  .header_nav ul {
+    display: flex;
+  }
+}
+@media screen and (min-width: 900px) {
+  .nav_link {
+    font-size: 1.5rem;
+  }
 }

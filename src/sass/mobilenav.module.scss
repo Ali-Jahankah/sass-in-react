@@ -4,35 +4,42 @@ $gray: #4e4e50;
 $brown: #6f2232;
 $hotpink: #950740;
 $red: #c3073f;
+$white: #c9c9ca;
+
 .nav {
   width: 100%;
-  min-height: 100%;
-  position: absolute;
+  height: 100%;
+  position: fixed;
+
   top: 0;
-  right: 0;
+  left: 0;
   background: $black;
   text-align: center;
   padding-top: 4em;
   font-family: "Trade Winds", cursive;
-  transition: all 2s;
-  transform: translateX(100%);
+  transition: background-color 3s, transform 2s;
+  overflow: hidden;
+  z-index: 5;
   ul {
     width: 100%;
     display: flex;
     flex-direction: column;
     li {
       list-style: none;
-      margin: 0.5rem auto;
+      margin: 1rem auto;
       a {
         color: $red;
-        font-size: 1.5rem;
+        font-size: 2.5rem;
+        text-shadow: 0 0 4px $white;
       }
     }
   }
 }
 .open {
-  transform: translateX(0);
+  transform: translateX(0%);
+  background: $black;
 }
 .close {
-  transform: translateX(100%);
+  transform: translateX(140%);
+  background: $red;
 }

@@ -11,6 +11,7 @@ $white: #c9c9ca;
   font-size: 1.2rem;
   margin-top: 10px;
   background: transparent;
+  color: $white;
   &::placeholder {
     color: $white;
     opacity: 0.5;
@@ -25,14 +26,12 @@ $white: #c9c9ca;
   background-position-x: 30%;
   padding: 4em 2em;
   min-height: 90vh;
-  filter: brightness(0.7);
-  &:hover {
-    filter: brightness(1);
-  }
 }
+
 .form_section {
-  width: 90%;
+  width: 100%;
   padding: 1em 1em 3em;
+  margin: 0 auto;
   background: linear-gradient(
     $gray,
     #950740,
@@ -47,6 +46,7 @@ $white: #c9c9ca;
   border-top-right-radius: 10%;
   border-bottom-right-radius: 80%;
   border-top-left-radius: 75%;
+  transition: 2s all;
 }
 .hero_form {
   width: 100%;
@@ -61,16 +61,29 @@ $white: #c9c9ca;
     @include form_input();
   }
   button {
-    width: max-content;
     color: $white;
-    display: inline;
     padding: 1.5em 0.5em;
-    box-shadow: 0 3px 0px 0px $hotpink;
+    box-shadow: 0 3px 3px 0px $hotpink;
     border-radius: 50%;
     background: $black;
     position: absolute;
     bottom: 20px;
-    left: 30%;
+    left: 50%;
     font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: -50px;
+    transform: scale(1.3);
+    &:hover {
+      transform: scale(1);
+      box-shadow: none;
+    }
+  }
+}
+.hide {
+  transform: translateX(-120%);
+}
+@media screen and (min-width: 500px) {
+  .form_section {
+    width: 80%;
   }
 }

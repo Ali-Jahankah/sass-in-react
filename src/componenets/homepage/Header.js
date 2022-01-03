@@ -1,12 +1,13 @@
-import React from "react";
-import MobileNav from "../mobile_nav/MobileNav";
+import React, { useContext } from "react";
 import styles from "../../css/header.module.css";
 import { Link } from "react-router-dom";
+import { homepage } from "../../contexts/homePage";
 
 const Header = () => {
+  const context = useContext(homepage);
+  const { menu, setMenu } = context;
   return (
     <>
-      <MobileNav />
       <header className={styles.header}>
         <nav className={styles.header_nav}>
           <div className="logo_div">
@@ -39,7 +40,7 @@ const Header = () => {
               </Link>
             </li>
           </ul>
-          <section className={styles.burger_btn}>
+          <section className={styles.burger_btn} onClick={() => setMenu(!menu)}>
             <div className={styles.burger_item}></div>
             <div className={styles.burger_item}></div>
             <div className={styles.burger_item}></div>
